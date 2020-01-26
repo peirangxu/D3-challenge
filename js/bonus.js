@@ -136,7 +136,7 @@ function renderText(
 // function used for updateing circles group with new tooltip
 
 // Load data
-d3.csv("../D3_data_journalism/data/data.csv").then(function(data, err) {
+d3.csv("data/data.csv").then(function(data, err) {
   // Print original data in console
   if (err) throw err;
 
