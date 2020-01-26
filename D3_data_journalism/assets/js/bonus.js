@@ -136,7 +136,7 @@ function renderText(
 // function used for updateing circles group with new tooltip
 
 // Load data
-d3.csv("assets/data/data.csv").then(function(data, err) {
+d3.csv("../D3_data_journalism/assets/data/data.csv").then(function(data, err) {
   // Print original data in console
   if (err) throw err;
 
@@ -252,7 +252,7 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
     .attr("fill", "skyblue")
     .style("opacity", 0.8);
 
-  var circleText = chartGroup
+    var circleText = chartGroup
     .append("text")
     .classed("stateText", true)
     .selectAll("tspan")
@@ -264,7 +264,11 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
     .text(d => d.abbr);
 
   // updateToolTip function above csv import
-  var circleGroup = updateToolTip(chosenXAxis, chosenYAxis, circleGroup);
+  var circleGroup = updateToolTip(
+    chosenXAxis,
+    chosenYAxis,
+    circleGroup
+  );
 
   labelGroup.selectAll("text").on("click", updatePlot);
 
